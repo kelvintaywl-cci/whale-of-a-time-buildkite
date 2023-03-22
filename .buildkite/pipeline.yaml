@@ -1,0 +1,9 @@
+steps:
+  - label: ":hammer: Inspect Dockerfile"
+    command: "cat Dockerfile"
+    agents:
+      linux: true
+  - label: ":hammer: Inspect tools"
+    command: "which docker"
+    agents:
+      linux: true
