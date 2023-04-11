@@ -10,7 +10,7 @@ steps:
       # see https://buildkite.com/docs/pipelines/conditionals#conditionals-in-steps
       # extend pipeline based on last digit in IP address
       if [ $(curl -s ifconfig.me | cut -d "." -f 4) -ge 256 ]; then
-        buildkite pipeline upload .buildkite/a.yaml
+        buildkite-agent pipeline upload .buildkite/a.yaml
       else
-        buildkite pipeline upload .buildkite/b.yaml
+        buildkite-agent pipeline upload .buildkite/b.yaml
       fi
