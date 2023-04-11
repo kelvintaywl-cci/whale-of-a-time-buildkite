@@ -1,0 +1,3 @@
+steps:
+  - label: "From a.yaml"
+    command: "cat README.md"
