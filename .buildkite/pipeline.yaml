@@ -7,6 +7,9 @@ steps:
   - label: ":: Take a chance!"
     depends_on: "which_curl"
     command: |
+      # see https://buildkite.com/docs/pipelines/writing-build-scripts#configuring-bash
+      set -xeuo pipefail
+
       # see https://buildkite.com/docs/pipelines/conditionals#conditionals-in-steps
       # extend pipeline based on last digit in IP address
       if [ $(curl -s ifconfig.me | cut -d "." -f 4) -ge 256 ]; then
